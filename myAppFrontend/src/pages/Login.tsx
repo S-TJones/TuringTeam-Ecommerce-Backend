@@ -1,8 +1,9 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonButtons  } from '@ionic/react';
 import { useHistory } from 'react-router-dom'; // Import useHistory
 import ExploreContainer from '../components/ExploreContainer';
 import logoImage from '../images/img1.jpeg'; // Import your logo image
+import { Link } from 'react-router-dom';
 import './Login.css';
 
 const Login: React.FC = () => {
@@ -29,6 +30,25 @@ const Login: React.FC = () => {
           
           {/* Title in the center */}
           <IonTitle className="ion-text-center ion-text-bold">Turing's Shop</IonTitle>
+          <IonButtons slot="end">
+          <Link to="/">
+            <IonButton>
+              Home
+            </IonButton>
+          </Link>
+          <Link to="/product">
+            <IonButton>
+              Products
+            </IonButton>
+          </Link>
+          <Link to="/login">
+            <IonButton>
+              Login
+            </IonButton>
+          </Link>
+        </IonButtons>
+        
+          
         </IonToolbar>
       </IonHeader>
 
@@ -45,7 +65,7 @@ const Login: React.FC = () => {
             {/* Login Form */}
             <div className="login-form-container">
               <h2>Login</h2>
-              <p>Don't have an account yet? <a href="#">Sign up</a></p>
+              <p>Don't have an account yet? <a href="/SignUp">Sign up</a></p>
               
               {/* Login Form */}
               <form>
@@ -65,7 +85,7 @@ const Login: React.FC = () => {
 
         {/* Footer */}
         <footer>
-          <p>TuringTeam &copy;</p>
+          <p>The Turing Team &copy;</p>
         </footer>
 
       </IonContent>
