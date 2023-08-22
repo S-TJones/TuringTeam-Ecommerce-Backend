@@ -38,10 +38,12 @@
   .login-form-container {
     flex: 1;
     padding: 20px;
+    color: #ffffff
   }
   
   .form-group {
     margin-bottom: 15px;
+    color:white;
   }
   
   .form-group label {
@@ -53,40 +55,38 @@
   .form-group input {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    color: #000; /* Change text color to black */
+    background-color: #fff; /* Set background color to white */
+    border: 1px solid #fff; /* Set border color to white */
     border-radius: 4px;
   }
   
-  button {
-    display: inline-block; /* Display as inline block */
-    padding: 10px 20px; /* Add padding around the text */
-    background: linear-gradient(to bottom, #007bff, #0056b3); /* Gradient background */
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    
-    /* Center the button horizontally */
-    margin: 0 auto;
-    
-    /* Add padding to the background */
-    background-size: 100% 120%;
-    padding: 12px 20px; /* Adjust padding for the button background */
-  }
   
-  /* Hover effect */
-  button:hover {
-    background: linear-gradient(to bottom, #0056b3, #003f81); /* Darker gradient on hover */
-    transform: scale(1.02); /* Slight scale increase on hover */
-  }
-  
-  
-  
+ /* Update the CSS for the button */
+button {
+  display: inline-block; /* Display as inline block */
+  padding: 20px 20px; /* Add padding around the text */
+  /* background: linear-gradient(to bottom, #007bff, #0056b3); Gradient background */
+  background-color: navy; /* Change background color to navy blue */
+  color: #fff; /* Text color to white */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: auto; /* Add margin to center the button horizontally and create space */
+  width: 25%; /* Make the button expand to full width */
+}
+
+/* Hover effect */
+button:hover {
+  background: linear-gradient(to bottom, #0056b3, #003f81); /* Darker gradient on hover */
+  transform: scale(1.02); /* Slight scale increase on hover */
+}
+
   
   /* App.css */
 
