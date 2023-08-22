@@ -1,6 +1,8 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
+import { Link } from 'react-router-dom';
+import logoImage from '../images/img1.jpeg'; // Import your logo image
 
 // The replaceable components
 import ProductList from '../components/ProductList';
@@ -12,9 +14,36 @@ const Home: React.FC = () => {
       {/* Header */}
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Blank</IonTitle>
+          {/* Add image to the far right */}
+          <div slot="start">
+            <img src={logoImage} alt="Logo" style={{ height: '30px', width: 'auto' }} />
+          </div>
+          
+          
+          {/* Title in the center */}
+          <IonTitle className="ion-text-center ion-text-bold">Turing's Shop</IonTitle>
+          <IonButtons slot="end">
+          <Link to="/">
+            <IonButton>
+              Home
+            </IonButton>
+          </Link>
+          <Link to="/product">
+            <IonButton>
+              Products
+            </IonButton>
+          </Link>
+          <Link to="/login">
+            <IonButton>
+              login
+            </IonButton>
+          </Link>
+        </IonButtons>
+        
+          
         </IonToolbar>
       </IonHeader>
+
 
       {/* Content Area */}
       <IonContent fullscreen>
@@ -39,9 +68,9 @@ const Home: React.FC = () => {
 
         {/* Footer */}
         <footer>
-          <p>TuringTeam &copy</p>
+          <p>The Turing Team &copy;</p>
         </footer>
-        <ExploreContainer />
+      
       </IonContent>
     </IonPage>
   );
