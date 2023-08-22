@@ -1,0 +1,112 @@
+/* App.css */
+
+/* Center content vertically and horizontally */
+
+.ion-padding {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0; /* Remove margin for body element */
+    overflow: hidden; /* Prevent vertical scrollbars */
+  }
+  .login-container {
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .image-container {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Hide overflow if the image is larger than the container */
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+  }
+  
+  .login-form-container {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    display: inline-block; /* Display as inline block */
+    padding: 10px 20px; /* Add padding around the text */
+    background: linear-gradient(to bottom, #007bff, #0056b3); /* Gradient background */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    /* Center the button horizontally */
+    margin: 0 auto;
+    
+    /* Add padding to the background */
+    background-size: 100% 120%;
+    padding: 12px 20px; /* Adjust padding for the button background */
+  }
+  
+  /* Hover effect */
+  button:hover {
+    background: linear-gradient(to bottom, #0056b3, #003f81); /* Darker gradient on hover */
+    transform: scale(1.02); /* Slight scale increase on hover */
+  }
+  
+  
+  
+  
+  /* App.css */
+
+  
+  /* Center the footer */
+  footer {
+    margin-top: auto; /* Push footer to the bottom */
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .ion-padding,
+.login-form-container h2,
+.login-form-container p,
+.form-group label,
+.form-group input,
+footer {
+  color: #000;
+}
+
+.ion-title {
+    color: #fff;
+  }

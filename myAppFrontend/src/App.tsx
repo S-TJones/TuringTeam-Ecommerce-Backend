@@ -7,6 +7,11 @@ import HomePage from './components/HomePage';
 import ProductList from './components/ProductList';
 import ProductDetails from './components/ProductDetails';
 
+/* Importing Page Routing*/
+import Login from './pages/Login';
+import AddProduct from './pages/AddProduct';
+import SignUp from './pages/SignUp';
+
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -48,6 +53,21 @@ const App: React.FC = () => (
         {/* Routing for Product Details */}
         <Route path="/products/:id">
           <ProductDetails />
+        </Route>
+
+        {/* Routing for the Login Page */}
+        <Route exact path="/Login">
+          <Login />
+        </Route>
+
+        {/* Routing for the Login Page */}
+        <Route exact path="/SignUp">
+          <SignUp />
+        </Route>
+
+        {/* Routing for the Addproduct page */}
+        <Route exact path="/AddProduct">
+          <AddProduct/>
         </Route>
       </IonRouterOutlet>
 
