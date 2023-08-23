@@ -1,0 +1,77 @@
+/* UpdateProduct.css */
+.update-product-header {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .update-product-card {
+    margin: 20px auto;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .update-product-card ion-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+  
+  .update-product-card ion-label {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .update-product-card ion-input {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .update-product-card .product-image {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    margin-top: 10px;
+    border-radius: 8px;
+  }
+  
+  .update-product-card .buttons-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .update-product-card .action-buttons {
+    display: flex;
+  }
+  
+  .update-product-card .action-buttons ion-button {
+    flex: 1;
+    font-size: 18px;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    margin: 0 5px;
+  }
+  
+  .update-product-card .save-button {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .update-product-card .delete-button {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .update-product-card {
+      max-width: 90%;
+    }
+  }
+  

@@ -35,7 +35,7 @@ const ProductDetail: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <div slot="start">
-            <img src={logoImage} alt="Logo" style={{ height: '30px', width: 'auto' }} />
+            <img src={logoImage} alt="Logo" className="logo-image" />
           </div>
           <IonTitle className="ion-text-center ion-text-bold">Turing's Shop</IonTitle>
           <IonButtons slot="end">
@@ -54,29 +54,32 @@ const ProductDetail: React.FC = () => {
 
       <IonContent fullscreen>
         <main>
-          <IonCard className="product-card">
-            <IonCardHeader>
-              <img src={product.image} alt={product.title} className="product-image" />
-            </IonCardHeader>
-            <IonCardContent className="product-details">
-              <div className="product-info">
-                <IonCardTitle>{product.title}</IonCardTitle>
-                <p className="product-price">${product.price.toFixed(2)}</p>
-                <p className="product-description">{product.description}</p>
-                <IonLabel className="quantity-label">Quantity:</IonLabel>
-                <IonSelect className="quantity-select" interface="popover">
-                  <IonSelectOption value="1">1</IonSelectOption>
-                  <IonSelectOption value="2">2</IonSelectOption>
-                  <IonSelectOption value="3">3</IonSelectOption>
-                </IonSelect>
-                <IonButton expand="full" color="primary" className="add-to-cart-button">
-                  Add to Cart
-                </IonButton>
-              </div>
-            </IonCardContent>
-          </IonCard>
+          <div className="product-card-container">
+            <IonCard className="product-card">
+              <IonCardHeader>
+                <img src={product.image} alt={product.title} className="product-image" />
+              </IonCardHeader>
+              <IonCardContent className="product-details">
+                <div className="product-info">
+                  <IonCardTitle>{product.title}</IonCardTitle>
+                  <p className="product-price">${product.price.toFixed(2)}</p>
+                  <p className="product-description">{product.description}</p>
+                  <div className="quantity-container">
+                    <IonLabel className="quantity-label">Quantity:</IonLabel>
+                    <IonSelect className="quantity-select">
+                      <IonSelectOption value="1">1</IonSelectOption>
+                      <IonSelectOption value="2">2</IonSelectOption>
+                      <IonSelectOption value="3">3</IonSelectOption>
+                    </IonSelect>
+                  </div>
+                  <IonButton expand="full" color="primary" className="add-to-cart-button">
+                    Add to Cart
+                  </IonButton>
+                </div>
+              </IonCardContent>
+            </IonCard>
+          </div>
         </main>
-
 
         <footer>
           <p>TuringTeam &copy;</p>

@@ -17,6 +17,7 @@ import Products from './pages/Products';
 import ProductDetail from './pages/ProductDetail';
 import ProductList from './pages/ProductList';
 import UpdateUser from './pages/UpdateUser';
+import UpdateProduct from './pages/UpdateProduct';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -97,7 +98,7 @@ const App: React.FC = () => (
         </Route>
 
         
-        {/* Routing for product details page */}
+        {/* Routing for product details page for admin */}
       <Route exact path="/productlist">
           <ProductList/>
         </Route>
@@ -105,6 +106,11 @@ const App: React.FC = () => (
         {/* Routing for update user page */}
       <Route exact path="/edit-user/:userId">
           <UpdateUser/>
+        </Route>
+
+        {/* Routing for product edit page for admin */}
+      <Route exact path="/edit-product/:productId">
+          <UpdateProduct/>
         </Route>
 
       </IonRouterOutlet>

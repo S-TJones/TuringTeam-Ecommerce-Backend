@@ -1,63 +1,70 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonButtons, IonSelectOption,  IonItem, IonLabel, IonSelect, IonGrid, IonRow, IonCol,  } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonButton,
+  IonButtons,
+} from '@ionic/react';
 import { Link } from 'react-router-dom';
-import logoImage from '../images/img1.jpeg'; // Import your logo image
+import logoImage from '../images/img1.jpeg';
 import './ProductList.css';
-
+import products from '../components/ProductsData';
 
 const ProductList: React.FC = () => {
-    return (
-
+    
+  return (
     <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <div slot="start">
+            <img src={logoImage} alt="Logo" style={{ height: '30px', width: 'auto' }} />
+          </div>
+          <IonTitle className="ion-text-center ion-text-bold">Turing's Shop</IonTitle>
+          <IonButtons slot="end">
+            <Link to="/">
+              <IonButton>Home</IonButton>
+            </Link>
+            <Link to="/item">
+              <IonButton>Items</IonButton>
+            </Link>
+            <Link to="/login">
+              <IonButton>Login</IonButton>
+            </Link>
+          </IonButtons>
+        </IonToolbar>
+      </IonHeader>
       
-        {/* Header */}
-        <IonHeader>
-                <IonToolbar>
-                  {/* Add image to the far right */}
-                  <div slot="start">
-                    <img src={logoImage} alt="Logo" style={{ height: '30px', width: 'auto' }} />
-                  </div>
-                  
-                  {/* Title in the center */}
-                  <IonTitle className="ion-text-center ion-text-bold">Turing's Shop</IonTitle>
-                  <IonButtons slot="end">
-                  <Link to="/">
-                    <IonButton>
-                      Home
-                    </IonButton>
-                  </Link>
-                  <Link to="/item">
-                    <IonButton>
-                      items
-                    </IonButton>
-                  </Link>
-                  <Link to="/login">
-                    <IonButton>
-                      Login
-                    </IonButton>
-                  </Link>
-                </IonButtons>
-                
-                  
-                </IonToolbar>
-            </IonHeader>
-            
-            <IonContent fullscreen>
-
-
-
-
-
-
-            {/* Footer */}
-            <footer>
-            <p>TuringTeam &copy</p>
-            </footer>
-      
-            </IonContent>
+      <IonContent fullscreen>
+        <main className="product-list-container">
+          <h2 className="product-list-heading">Product List</h2>
+          <Link to="/add-product">
+            <IonButton className="add-product-button">Add Product</IonButton>
+          </Link>
+          <div className="product-cards">
+            {products.map(product => (
+              <div className="product-card" key={product.id}>
+                <img src={product.image} alt={product.title} className="product-image" />
+                <div className="product-details">
+                  <h3>{product.title}</h3>
+                  <p className="product-description">{product.description.substring(0, 50)}...</p>
+                  <p className="product-price">${product.price.toFixed(2)}</p>
+                </div>
+                <Link to={`/edit-product/${product.id}`} className="edit-button">
+                  Edit
+                </Link>
+              </div>
+            ))}
+          </div>
+        </main>
+        <footer>
+          <p>TuringTeam &copy;</p>
+        </footer>
+      </IonContent>
     </IonPage>
   );
-}
+};
 
 export default ProductList;
