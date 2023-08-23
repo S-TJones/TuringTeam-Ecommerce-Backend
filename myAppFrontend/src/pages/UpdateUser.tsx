@@ -52,8 +52,11 @@ const UpdateUser: React.FC = () => {
             <Link to="/">
               <IonButton>Home</IonButton>
             </Link>
-            <Link to="/products">
+            <Link to="/productlist">
               <IonButton>Products</IonButton>
+            </Link>
+            <Link to="/userlist">
+              <IonButton>Users</IonButton>
             </Link>
             <Link to="/login">
               <IonButton>Login</IonButton>

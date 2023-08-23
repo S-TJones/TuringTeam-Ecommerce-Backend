@@ -4,19 +4,15 @@ import ExploreContainer from '../components/ExploreContainer';
 import { Link } from 'react-router-dom';
 import logoImage from '../images/img1.jpeg'; // Import your logo image
 import './Cart.css';
+import items from '../components/ItemsData';
+import { useParams } from 'react-router-dom';
 
-
-// The replaceable components
-const items = [
-  { id: 1, name: 'Chair', price: 20.00, image: 'src/images/img1.jpeg', quantity: 1 },
-  { id: 2, name: 'Backpack', price: 25.00, image: 'src/images/img1.jpeg', quantity: 2 },
-  // Add more products as needed
-];
 
 const Cart: React.FC = () => {
+
   return (
     <IonPage>
-      
+      {/* Header */}
 {/* Header */}
 <IonHeader>
         <IonToolbar>
@@ -33,9 +29,9 @@ const Cart: React.FC = () => {
               Home
             </IonButton>
           </Link>
-          <Link to="/item">
+          <Link to="/productlist">
             <IonButton>
-              items
+              Products
             </IonButton>
           </Link>
           <Link to="/login">

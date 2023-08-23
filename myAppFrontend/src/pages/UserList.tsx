@@ -1,4 +1,4 @@
-import {  IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton} from '@ionic/react';
+import {  IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton,IonButtons} from '@ionic/react';
 import { Link } from 'react-router-dom';
 import ExploreContainer from '../components/ExploreContainer';
 import logoImage from '../images/img1.jpeg'; // Import your logo image
@@ -13,23 +13,29 @@ import users from '../components/UsersData';
 
 
 const UserList: React.FC = () => {
-  
   return (
     <IonPage>
-      {/* Header */}
-      <IonHeader>
-        <IonToolbar>
-          {/* Add image to the far right */}
-          <div slot="start">
-            <img src={logoImage} alt="Logo" style={{ height: '30px', width: 'auto' }} />
-          </div>
-          
-          {/* Title in the center */}
-          <IonTitle className="ion-text-center ion-text-bold">Turing's Shop</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+    <IonHeader>
+      <IonToolbar>
+        <div slot="start">
+          <img src={logoImage} alt="Logo" style={{ height: '30px', width: 'auto' }} />
+        </div>
+        <IonTitle className="ion-text-center ion-text-bold">Turing's Shop</IonTitle>
+        <IonButtons slot="end">
+          <Link to="/">
+            <IonButton>Home</IonButton>
+          </Link>
+          <Link to="/productlist">
+            <IonButton>Products</IonButton>
+          </Link>
+          <Link to="/login">
+            <IonButton>Login</IonButton>
+          </Link>
+        </IonButtons>
+      </IonToolbar>
+    </IonHeader>
 
-      {/* Content Area */}
+
       <IonContent fullscreen>
         {/* ... (header and other code) */}
         <main className="user-list">

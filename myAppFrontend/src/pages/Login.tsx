@@ -30,23 +30,7 @@ const Login: React.FC = () => {
           
           {/* Title in the center */}
           <IonTitle className="ion-text-center ion-text-bold">Turing's Shop</IonTitle>
-          <IonButtons slot="end">
-          <Link to="/">
-            <IonButton>
-              Home
-            </IonButton>
-          </Link>
-          <Link to="/products">
-            <IonButton>
-              Products
-            </IonButton>
-          </Link>
-          <Link to="/login">
-            <IonButton>
-              Login
-            </IonButton>
-          </Link>
-        </IonButtons>
+         
         
           
         </IonToolbar>

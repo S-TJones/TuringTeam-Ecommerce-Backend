@@ -29,9 +29,9 @@ const Products: React.FC = () => {
               Home
             </IonButton>
           </Link>
-          <Link to="/products">
+          <Link to="/cart">
             <IonButton>
-              Products
+              Cart
             </IonButton>
           </Link>
           <Link to="/login">

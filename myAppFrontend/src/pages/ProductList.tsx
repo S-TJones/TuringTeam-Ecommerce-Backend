@@ -27,8 +27,8 @@ const ProductList: React.FC = () => {
             <Link to="/">
               <IonButton>Home</IonButton>
             </Link>
-            <Link to="/item">
-              <IonButton>Items</IonButton>
+            <Link to="/userlist">
+              <IonButton>Users</IonButton>
             </Link>
             <Link to="/login">
               <IonButton>Login</IonButton>
