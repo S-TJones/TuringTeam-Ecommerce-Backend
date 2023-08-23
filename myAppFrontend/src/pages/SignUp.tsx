@@ -1,112 +1,98 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import React from 'react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonButtons } from '@ionic/react';
+import { useHistory } from 'react-router-dom'; // Import useHistory
 import ExploreContainer from '../components/ExploreContainer';
-
-import React, { useState } from 'react';
-
-// The replaceable components
+import { Link } from 'react-router-dom';
+import logoImage from '../images/img1.jpeg'; // Import your logo image
+import './SignUp.css';
 
 const SignUp: React.FC = () => {
-
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-
-  const handleSignup = () => {
-    // Create a JSON object with the user's signup data
-    const userData = {
-      firstName,
-      lastName,
-      email,
-      password,
-      confirmPassword,
-    };
-
-    // Send a POST request to your Flask signup route
-    fetch('/signup', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(userData),
-    })
-      .then((response) => {
-        if (response.ok) {
-          // Signup succeeded
-          // Redirect the user to the login page or a success page
-          window.location.href = '/login'; // Example redirection
-        } else {
-          // Signup failed
-          // Handle error or show an error message to the user
-        }
-      })
-      .catch((error) => {
-        console.error('Error during signup:', error);
-        // Handle network errors or other issues
-      });
-  };
-
   return (
     <IonPage>
       {/* Header */}
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Blank</IonTitle>
+          {/* Add image to the far right */}
+          <div slot="start">
+            <img src={logoImage} alt="Logo" style={{ height: '30px', width: 'auto' }} />
+          </div>
+          
+          {/* Title in the center */}
+          <IonTitle className="ion-text-left ion-text-bold" title-left>Turing's Shop</IonTitle>
+          <IonButtons slot="end">
+          <Link to="/" className='tabs'>
+            <IonButton>
+              Home
+            </IonButton>
+          </Link>
+          <Link to="/product" className='tabs'>
+            <IonButton>
+              Products
+            </IonButton>
+            </Link>
+          <Link to="/orders" className='tabs'>
+            <IonButton>
+              Orders
+            </IonButton>
+          </Link>
+          <Link to="/cart" className='tabs'>
+            <IonButton>
+              Cart
+            </IonButton>
+          </Link>
+          <Link to="/login" className='tabs'>
+            <IonButton>
+              Login
+            </IonButton>
+          </Link>
+        </IonButtons>
         </IonToolbar>
       </IonHeader>
 
       {/* Content Area */}
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Blank</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+        {/* Main Content */}
+        <main className="ion-padding">
+          <div className="login-container">
+            {/* Image */}
+            <div className="image-container">
+              <img src="src/images/img1.jpeg" alt="Big Image" />
+            </div>
 
-        {/* Main Content - Switchable Components */}
-        <main>
-          <div>
-            <h1>Signup</h1>
-            <input
-              type="text"
-              placeholder="First Name"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="Last Name"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <input
-              type="password"
-              placeholder="Confirm Password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-            />
-            <button onClick={handleSignup}>Signup</button>
+            {/* Login Form */}
+            <div className="login-form-container">
+              <h2>Sign Up</h2>
+              
+              {/* Login Form */}
+              <form>
+                <div className="form-group">
+                  <label htmlFor="name">Full Name</label>
+                  <input type="text" id="name" />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="email">Email</label>
+                  <input type="email" id="email" />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="password">Password</label>
+                  <input type="password" id="password" />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="confirmPassword">Confirm Password</label>
+                  <input type="password" id="confirmPassword" />
+                </div>
+                
+                <button type="button" >SignUp</button>
+              </form>
+            </div>
           </div>
         </main>
 
         {/* Footer */}
         <footer>
-          <p>TuringTeam &copy</p>
+          <p>TuringTeam &copy;</p>
         </footer>
-        <ExploreContainer />
+
       </IonContent>
     </IonPage>
   );
