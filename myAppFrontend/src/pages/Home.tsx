@@ -33,6 +33,8 @@ const Home: React.FC = () => {
             <IonRouterLink routerLink="/about">Go to About</IonRouterLink>
             <IonRouterLink routerLink="/products">Go to Products</IonRouterLink>
             <IonRouterLink routerLink="/status">Go to Status</IonRouterLink>
+            <IonRouterLink routerLink="/login">Go to Login</IonRouterLink>
+            <IonRouterLink routerLink="/signup">Go to Sign Up</IonRouterLink>
           </div>
         </main>
 

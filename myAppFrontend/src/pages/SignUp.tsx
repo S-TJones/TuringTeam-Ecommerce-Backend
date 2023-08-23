@@ -1,50 +1,83 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 
-import React, { useState } from 'react';
+import './styles/signup.css';
+
+import React, { useState, useEffect } from 'react';
 
 // The replaceable components
 
 const SignUp: React.FC = () => {
 
+  const [formFields, setFormFields] = useState({});
+
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [retypePassword, setRetypePassword] = useState('');
+  const [csrfToken, setCsrfToken] = useState<string>('');
 
-  const handleSignup = () => {
+  useEffect(() => {
+    
+  }, []);
+
+  const handleSignup = async () => {
     // Create a JSON object with the user's signup data
     const userData = {
       firstName,
       lastName,
       email,
       password,
-      confirmPassword,
+      retypePassword,
     };
 
-    // Send a POST request to your Flask signup route
-    fetch('/signup', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(userData),
-    })
+    // Make a fetch request to your server endpoint
+    await fetch('http://127.0.0.1:5000/api/v1/sign-up')
+    .then((response) => response.json())
+    .then((data:any) => {
+      // Extract the CSRF token from the HTML response
+      setCsrfToken( data.token );
+      console.log("TOKEN=="+data.token);
+
+      // Send a POST request to your Flask signup route
+      fetch('http://127.0.0.1:5000/api/v1/sign-up', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': data.token, // Include the CSRF token in the headers
+        },
+        body: JSON.stringify(userData),
+        // mode: 'no-cors'
+      })
       .then((response) => {
-        if (response.ok) {
+        console.error("Res: "+response.status);
+
+        if (response.ok || response.status==201) {
           // Signup succeeded
           // Redirect the user to the login page or a success page
-          window.location.href = '/login'; // Example redirection
+          // window.location.href = '/login'; // Example redirection
+          console.log('Signup success');
+
         } else {
           // Signup failed
           // Handle error or show an error message to the user
+          console.error('Signup failed');
         }
+      })
+      .then((data:any) => {
+        console.log(data);
+
       })
       .catch((error) => {
         console.error('Error during signup:', error);
         // Handle network errors or other issues
       });
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+
   };
 
   return (
@@ -76,6 +109,7 @@ const SignUp: React.FC = () => {
             />
             <input
               type="text"
+              className='nameField'
               placeholder="Last Name"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
@@ -95,8 +129,8 @@ const SignUp: React.FC = () => {
             <input
               type="password"
               placeholder="Confirm Password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
+              value={retypePassword}
+              onChange={(e) => setRetypePassword(e.target.value)}
             />
             <button onClick={handleSignup}>Signup</button>
           </div>
