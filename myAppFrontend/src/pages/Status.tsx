@@ -1,12 +1,25 @@
 import { IonContent, IonHeader, IonPage, IonRouterLink, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
-import './Home.css';
+import React, { useState, useEffect } from 'react';
 
-// The replaceable components
-import ProductList from '../components/ProductList';
-import ProductDetails from '../components/ProductDetails';
+const Status: React.FC = () => {
+  const [status, setStatus] = useState<string>(''); // Initialize with an empty string
 
-const Home: React.FC = () => {
+  // Use the useEffect hook to fetch the status from the Flask backend
+  useEffect(() => {
+    // Fetch the status from your Flask backend
+    fetch('http://127.0.0.1:5000/api/v1/status')
+      .then((response) => response.json())
+      .then((data) => {
+        // Set the retrieved status in the component's state
+        setStatus(data.message);
+      })
+      .catch((error) => {
+        console.error('Error fetching status:', error);
+        // Handle network errors or other issues
+      });
+  }, []);
+
   return (
     <IonPage>
       {/* Header */}
@@ -27,12 +40,8 @@ const Home: React.FC = () => {
         {/* Main Content - Switchable Components */}
         <main>
           <div>
-            <h1>Home Page</h1>
-
-            {/* Links to other pages */}
-            <IonRouterLink routerLink="/about">Go to About</IonRouterLink>
-            <IonRouterLink routerLink="/products">Go to Products</IonRouterLink>
-            <IonRouterLink routerLink="/status">Go to Status</IonRouterLink>
+            <h1>Status Page</h1>
+            <p>Status from Flask Backend: {status}</p>
           </div>
         </main>
 
@@ -46,4 +55,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default Status;
