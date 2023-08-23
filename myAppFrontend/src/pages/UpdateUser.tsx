@@ -1,6 +1,6 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
-
+import './UserList.css';
 // The replaceable components
 
 const UpdateUser: React.FC = () => {

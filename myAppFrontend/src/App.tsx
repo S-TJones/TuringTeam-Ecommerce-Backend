@@ -11,6 +11,10 @@ import ProductDetails from './components/ProductDetails';
 import Login from './pages/Login';
 import AddProduct from './pages/AddProduct';
 import SignUp from './pages/SignUp';
+import UserList from './pages/UserList';
+import Cart from './pages/Cart'
+import Products from './pages/Products'
+import ProductDetail from './pages/ProductDetail'
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -65,10 +69,31 @@ const App: React.FC = () => (
           <SignUp />
         </Route>
 
-        {/* Routing for the Addproduct page */}
+        {/* Routing for the Add product page */}
         <Route exact path="/AddProduct">
           <AddProduct/>
         </Route>
+
+        {/* Routing for the user list page */}
+        <Route exact path="/userlist">
+          <UserList/>
+        </Route>
+
+        {/* Routing for the card page */}
+        <Route exact path="/cart">
+          <Cart/>
+        </Route>
+
+      {/* Routing for products page */}
+      <Route exact path="/Products">
+          <Products/>
+        </Route>
+
+      {/* Routing for product details page */}
+      <Route exact path="/Products/:id">
+          <ProductDetails/>
+        </Route>
+
       </IonRouterOutlet>
 
     </IonReactRouter>
