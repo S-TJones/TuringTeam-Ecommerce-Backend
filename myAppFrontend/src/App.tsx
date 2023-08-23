@@ -7,6 +7,16 @@ import HomePage from './components/HomePage';
 import ProductList from './components/ProductList';
 import ProductDetails from './components/ProductDetails';
 
+
+
+/* Importing Page Routing*/
+import Login from './pages/Login';
+import AddProduct from './pages/AddProduct';
+import SignUp from './pages/SignUp';
+import UserList from './pages/UserList';
+import Products from './pages/Products';
+import Cart from './pages/Cart';
+
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -40,6 +50,11 @@ const App: React.FC = () => (
           <Redirect to="/home" />
         </Route>
 
+         {/* Routing for the Product List */}
+         <Route exact path="/cart">
+          <Cart />
+        </Route>
+
         {/* Routing for the Product List */}
         <Route exact path="/products">
           <ProductList />
@@ -48,6 +63,29 @@ const App: React.FC = () => (
         {/* Routing for Product Details */}
         <Route path="/products/:id">
           <ProductDetails />
+        </Route>
+
+        {/* Routing for the Login Page */}
+        <Route exact path="/Login">
+          <Login />
+        </Route>
+
+        <Route exact path="/product">
+          <Products />
+        </Route>
+
+        {/* Routing for the Login Page */}
+        <Route exact path="/SignUp">
+          <SignUp />
+        </Route>
+
+        {/* Routing for the Addproduct page */}
+        <Route exact path="/AddProduct">
+          <AddProduct />
+        </Route>
+
+        <Route exact path="/userlist">
+          <UserList />
         </Route>
       </IonRouterOutlet>
 
