@@ -1,43 +1,21 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import React from 'react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonButtons  } from '@ionic/react';
+import { useHistory } from 'react-router-dom'; // Import useHistory
 import ExploreContainer from '../components/ExploreContainer';
-
-import React, { useState } from 'react';
-
-// The replaceable components
+import logoImage from '../images/img1.jpeg'; // Import your logo image
+import { Link } from 'react-router-dom';
+import './Login.css';
 
 const Login: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
-    // Create a JSON object with the user's credentials
-    const credentials = {
-      email,
-      password,
-    };
+  const history = useHistory(); // Initialize useHistory
 
-    // Send a POST request to your Flask authentication route
-    fetch('/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(credentials),
-    })
-    .then((response) => {
-      if (response.ok) {
-        // Authentication succeeded
-        // Redirect the user to the protected part of your app
-        window.location.href = '/dashboard'; // Example redirection
-      } else {
-        // Authentication failed
-        // Handle error or show an error message to the user
-      }
-    })
-    .catch((error) => {
-      console.error('Error during login:', error);
-      // Handle network errors or other issues
-    });
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); // Prevent form submission
+    // Perform your login logic here
+    
+    // If login is successful, navigate to /home
+    history.push('/home');
   };
 
   return (
@@ -45,43 +23,81 @@ const Login: React.FC = () => {
       {/* Header */}
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Blank</IonTitle>
+          {/* Add image to the far right */}
+          <div slot="start">
+            <img src={logoImage} alt="Logo" style={{ height: '30px', width: 'auto' }} />
+          </div>
+          
+          {/* Title in the center */}
+          <IonTitle className="ion-text-left ion-text-bold title left">Turing's Shop</IonTitle>
+          <IonButtons slot="end">
+          <Link to="/" className='tabs'>
+            <IonButton>
+              Home
+            </IonButton>
+          </Link>
+          <Link to="/product" className='tabs'>
+            <IonButton>
+              Products
+            </IonButton>
+          </Link>
+          <Link to="/orders" className='tabs'>
+            <IonButton>
+              Orders
+            </IonButton>
+          </Link>
+          <Link to="/cart" className='tabs'>
+            <IonButton>
+              Cart
+            </IonButton>
+          </Link>
+          <Link to="/login" className='tabs'>
+            <IonButton>
+              Login
+            </IonButton>
+          </Link>
+        </IonButtons>
+        
+          
         </IonToolbar>
       </IonHeader>
 
       {/* Content Area */}
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Blank</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+        {/* Main Content */}
+        <main className="ion-padding">
+          <div className="login-container">
+            {/* Image */}
+            <div className="image-container">
+              <img src="src/images/img1.jpeg" alt="Big Image" />
+            </div>
 
-        {/* Main Content - Switchable Components */}
-        <main>
-          <div>
-            <h1>Login</h1>
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <button onClick={handleLogin}>Login</button>
+            {/* Login Form */}
+            <div className="login-form-container">
+              <h2>Login</h2>
+              <p>Don't have an account yet? <a href="/SignUp">Sign up</a></p>
+              
+              {/* Login Form */}
+              <form>
+                <div className="form-group">
+                  <label htmlFor="email">Email</label>
+                  <input type="email" id="email" />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="password">Password</label>
+                  <input type="password" id="password" />
+                </div>
+                <button type="button" onClick={handleLogin}>Login</button>
+              </form>
+            </div>
           </div>
         </main>
 
         {/* Footer */}
         <footer>
-          <p>TuringTeam &copy</p>
+          <p>The Turing Team &copy;</p>
         </footer>
-        <ExploreContainer />
+
       </IonContent>
     </IonPage>
   );
