@@ -1,0 +1,38 @@
+.user-list {
+    padding: 20px;
+  }
+  
+  .user-list-header {
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .user-item {
+    list-style: none;
+  }
+  
+  .user-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .user-info {
+    color: #000 !important;
+    flex: 1;
+  }
+  
+  .edit-button {
+    color: #007bff;
+  }
+  
+  footer {
+    margin-top: auto; /* Push footer to the bottom */
+    text-align: center;
+    padding: 20px;
+  }
