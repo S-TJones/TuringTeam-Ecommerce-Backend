@@ -36,7 +36,7 @@ const Login: React.FC = () => {
               Home
             </IonButton>
           </Link>
-          <Link to="/product">
+          <Link to="/products">
             <IonButton>
               Products
             </IonButton>

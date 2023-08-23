@@ -1,19 +1,19 @@
 import {  IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton} from '@ionic/react';
+import { Link } from 'react-router-dom';
 import ExploreContainer from '../components/ExploreContainer';
 import logoImage from '../images/img1.jpeg'; // Import your logo image
 import './UserList.css';
+import users from '../components/UsersData';
+
 
 
 
 // The replaceable components. Obv we replace this with the data from database but example page
-const users = [
-  { id: 1, name: 'John Doe', email: 'john@example.com' },
-  { id: 2, name: 'Jane Smith', email: 'jane@example.com' },
-  // Add more user data here
-];
+
 
 
 const UserList: React.FC = () => {
+  
   return (
     <IonPage>
       {/* Header */}
@@ -49,7 +49,9 @@ const UserList: React.FC = () => {
                   <span className="user-label">Email:</span>
                   <span className="user-info">{user.email}</span>
                 </div>
+                <Link to={`/edit-user/${user.id}`} key={user.id}> {/* Link to the EditUserForm */}
                 <IonButton className="edit-button" fill="clear">Edit</IonButton>
+                </Link>
               </div>
             ))}
           </div>

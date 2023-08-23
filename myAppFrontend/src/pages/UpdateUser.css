@@ -1,0 +1,64 @@
+/* EditUserForm.css */
+.update-user-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .update-user-card {
+    width: 100%;
+    max-width: 450px; /* Increased max-width for a slightly bigger card */
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .update-user-title {
+    text-align: center;
+    margin: 0;
+    padding: 20px 0;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .update-user-card .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Adjust spacing between form groups */
+  }
+  
+  .update-user-card ion-label {
+    font-weight: bold;
+    flex-basis: 30%; /* Adjust label width */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .update-user-card ion-input,
+  .update-user-card ion-select {
+    flex-grow: 1;
+    margin: 0;
+    padding: 10px; /* Increased padding for larger input/select boxes */
+    font-size: 16px; /* Increased font size for better readability */
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px; /* Increased margin-top for more spacing */
+  }
+  
+  .save-button,
+  .cancel-button {
+    width: 48%;
+  }
+  
+  .update-user-card ion-button.save-button {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .update-user-card ion-button.cancel-button {
+    background-color: #ccc;
+  }
+  

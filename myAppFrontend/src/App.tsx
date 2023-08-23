@@ -4,7 +4,7 @@ import { IonReactRouter } from '@ionic/react-router';
 
 import Home from './pages/Home';
 import HomePage from './components/HomePage';
-import ProductList from './components/ProductList';
+//import ProductList from './components/ProductList';
 import ProductDetails from './components/ProductDetails';
 
 /* Importing Page Routing*/
@@ -12,9 +12,11 @@ import Login from './pages/Login';
 import AddProduct from './pages/AddProduct';
 import SignUp from './pages/SignUp';
 import UserList from './pages/UserList';
-import Cart from './pages/Cart'
-import Products from './pages/Products'
-import ProductDetail from './pages/ProductDetail'
+import Cart from './pages/Cart';
+import Products from './pages/Products';
+import ProductDetail from './pages/ProductDetail';
+import ProductList from './pages/ProductList';
+import UpdateUser from './pages/UpdateUser';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -90,8 +92,19 @@ const App: React.FC = () => (
         </Route>
 
       {/* Routing for product details page */}
-      <Route exact path="/Products/:id">
-          <ProductDetails/>
+      <Route exact path="/Products/:productId">
+          <ProductDetail/>
+        </Route>
+
+        
+        {/* Routing for product details page */}
+      <Route exact path="/productlist">
+          <ProductList/>
+        </Route>
+
+        {/* Routing for update user page */}
+      <Route exact path="/edit-user/:userId">
+          <UpdateUser/>
         </Route>
 
       </IonRouterOutlet>

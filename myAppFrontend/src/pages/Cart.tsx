@@ -16,7 +16,7 @@ const items = [
 const Cart: React.FC = () => {
   return (
     <IonPage>
-      {/* Header */}
+      
 {/* Header */}
 <IonHeader>
         <IonToolbar>
