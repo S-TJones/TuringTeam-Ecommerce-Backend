@@ -4,19 +4,14 @@ import { IonButtons, IonContent, IonHeader, IonMenu, IonMenuButton, IonPage, Ion
 import { Link } from 'react-router-dom';
 import logoImage from '../images/img1.jpeg'; // Import your logo image
 import homeImage from '../images/img2.jpg'; // Import your home image
-import './Home.css';
+import './styles/Home.css';
 import ExploreContainer from '../components/ExploreContainer';
 import ProductList from '../components/ProductList';
 import ProductDetails from '../components/ProductDetails';
 
 const Home: React.FC = () => {
   return (
-    
-
     <IonPage>
-
-
-
       <IonHeader>
         <IonToolbar>
           {/* Add image to the far left */}
@@ -27,7 +22,8 @@ const Home: React.FC = () => {
           {/* Title in the center */}
           <IonTitle className="ion-text-left ion-text-bold title-left">Turing's Shop</IonTitle>
           <IonButtons slot="end">
-           
+          
+            {/* Links to other pages */}
             <Link to="/" className='tabs'>
               <IonButton>
                 Home
@@ -77,8 +73,6 @@ const Home: React.FC = () => {
             <IonButton color="primary" expand="full" href= "/products">
               Start Shopping Now
             </IonButton>
-            
-            
             
             {/* Add more content as needed */}
           </div>

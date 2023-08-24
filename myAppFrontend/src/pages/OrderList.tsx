@@ -3,7 +3,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonBu
 import { Link } from 'react-router-dom';
 import ExploreContainer from '../components/ExploreContainer';
 import logoImage from '../images/img1.jpeg';
-import './OrderList.css';
+import './styles/OrderList.css';
 
 const orders = [
   {

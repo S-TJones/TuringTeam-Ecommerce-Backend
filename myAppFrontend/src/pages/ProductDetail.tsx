@@ -18,16 +18,36 @@ import {
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import products from '../components/ProductsData';
-
 import logoImage from '../images/img1.jpeg';
-import './ProductDetail.css';
+import './styles/ProductDetail.css';
+
+import { useEffect, useState } from 'react';
+import Product from '../types/Product';
+import { fetchProductDetails } from '../services/productService';
+
+// The replaceable components
 
 const ProductDetail: React.FC = () => {
-  const { productId } = useParams<{ productId: string }>();
-  const product = products.find(product => product.id === parseInt(productId, 10));
+  const { id } = useParams<{ id: string }>();
+  const [product, setProduct] = useState<Product | null>(null); // Use the Product type as the state type
+
+  useEffect(() => {
+    // Make a GET request to fetch products
+    fetch(`http://127.0.0.1:5000/api/v1/products/${id}`)
+    .then((response) => response.json())
+    .then((data: Product) => {
+      console.log(data);
+
+      setProduct(data);
+    })
+    .catch((error: any) => {
+      // Handle errors
+      console.log(error);
+    });
+  }, [id]);
 
   if (!product) {
-    return <div>Product not found</div>;
+    return <div>Loading...</div>;
   }
 
   return (
@@ -76,12 +96,12 @@ const ProductDetail: React.FC = () => {
           <div className="product-card-container">
             <IonCard className="product-card">
               <IonCardHeader>
-                <img src={product.image} alt={product.title} className="product-image" />
+                <img src={product.image} alt={product.name} className="product-image" />
               </IonCardHeader>
               <IonCardContent className="product-details">
                 <div className="product-info">
-                  <IonCardTitle>{product.title}</IonCardTitle>
-                  <p className="product-price">${product.price.toFixed(2)}</p>
+                  <IonCardTitle>{product.name}</IonCardTitle>
+                  <p className="product-price">${product.price}</p>
                   <p className="product-description">{product.description}</p>
                   <div className="quantity-container">
                     <IonLabel className="quantity-label">Quantity:</IonLabel>

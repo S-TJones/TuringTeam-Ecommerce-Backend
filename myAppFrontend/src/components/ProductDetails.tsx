@@ -28,7 +28,7 @@ const ProductDetails: React.FC = () => {
       <h1>{product.name}</h1>
       <p>Price: ${product.price}</p>
       <img src={product.image} alt={product.name} />
-      <p>Date and Time: {product.created_at.toISOString()}</p>
+      {/* <p>Date and Time: {product.created_at.toISOString()}</p> */}
       {/* Display other product details */}
     </div>
   );

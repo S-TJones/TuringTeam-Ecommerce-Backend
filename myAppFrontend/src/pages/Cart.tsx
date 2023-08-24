@@ -3,7 +3,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonBut
 import ExploreContainer from '../components/ExploreContainer';
 import { Link } from 'react-router-dom';
 import logoImage from '../images/img1.jpeg'; // Import your logo image
-import './Cart.css';
+import './styles/Cart.css';
 import items from '../components/ItemsData';
 import { useParams } from 'react-router-dom';
 

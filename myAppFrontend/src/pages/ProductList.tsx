@@ -10,7 +10,7 @@ import {
 } from '@ionic/react';
 import { Link } from 'react-router-dom';
 import logoImage from '../images/img1.jpeg';
-import './ProductList.css';
+import './styles/ProductList.css';
 import products from '../components/ProductsData';
 
 const ProductList: React.FC = () => {

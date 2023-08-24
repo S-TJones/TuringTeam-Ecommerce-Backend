@@ -19,7 +19,7 @@ import {
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import logoImage from '../images/img1.jpeg';
-import './UpdateUser.css';
+import './styles/UpdateUser.css';
 import users from '../components/UsersData';
 
 // The replaceable components

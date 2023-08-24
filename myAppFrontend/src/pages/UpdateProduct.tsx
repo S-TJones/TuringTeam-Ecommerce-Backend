@@ -16,30 +16,40 @@ import {
 } from '@ionic/react';
 import { Link, useHistory } from 'react-router-dom';
 import logoImage from '../images/img1.jpeg';
-import './UpdateProduct.css';
+import './styles/UpdateProduct.css';
 import products from '../components/ProductsData';
+import Product from '../types/Product';
+
+// The replaceable components
 
 const UpdateProduct: React.FC = () => {
-  const { productId } = useParams<{ productId: string }>();
-  const product = products.find(product => product.id === parseInt(productId, 10));
 
-  const [title, setTitle] = useState('');
-  const [price, setPrice] = useState('');
-  const [description, setDescription] = useState('');
-  const [image, setImage] = useState('');
-  const history = useHistory();
+  const { id } = useParams<{ id: string }>();
+  const [product, setProduct] = useState<Product | null>(null); // Use the Product type as the state type
 
+  // Fetch the product data by ID when the component mounts
   useEffect(() => {
-    if (product) {
-      setTitle(product.title);
-      setPrice(product.price.toFixed(2));
-      setDescription(product.description);
-      setImage(product.image);
-    }
-  }, [product]);
-
+    // Implement logic to fetch product details by ID and update 'product' state
+    // Example:
+    fetch(`http://127.0.0.1:5000/api/v1/products/${id}`)
+    .then((response) => response.json())
+    .then((data: Product) => {
+      console.log(data);
+      setProduct(data);
+    })
+    .catch((error: any) => {
+      // Handle errors
+      console.log(error);
+    });
+  }, [id]);
+  
   const handleSave = () => {
     // Logic to update product data
+    // Implement logic to send edited product data to the backend
+    // Example:
+    // editProduct(id, product).then(() => {
+    //   // Redirect or show a success message
+    // });
   };
 
   const handleDelete = () => {
@@ -74,37 +84,51 @@ const UpdateProduct: React.FC = () => {
 
       <IonContent fullscreen>
         <main>
-          <div className="update-product-header">
-            <h2>Update Product</h2>
-          </div>
           <IonCard className="update-product-card">
             <IonCardContent>
-              <IonLabel>Title:</IonLabel>
-              <IonInput value={title} onIonChange={e => setTitle(e.detail.value!)} />
+              <IonLabel>Name:</IonLabel>
+              {/* <IonInput value={product.name} onChange={(e) => setProduct({ ...product, name: e.detail.value! })} /> */}
+              <input
+                type="text"
+                placeholder="Name"
+                value={product.name}
+                onChange={(e) => setProduct({ ...product, name: e.target.value })}
+              />
 
               <IonLabel>Price:</IonLabel>
-              <IonInput type="number" value={price} onIonChange={e => setPrice(e.detail.value!)} />
+              {/* <IonInput type="number" value={product.price} onIonChange={e => setPrice(e.detail.value!)} /> */}
+              <input
+                type="number"
+                placeholder="Price"
+                value={product.price}
+                onChange={(e) => setProduct({ ...product, price: parseFloat(e.target.value) })}
+              />
 
               <IonLabel>Description:</IonLabel>
-              <IonInput value={description} onIonChange={e => setDescription(e.detail.value!)} />
+              {/* <IonInput value={product.description} onIonChange={e => setDescription(e.detail.value!)} /> */}
+              <textarea
+                placeholder="Description"
+                value={product.description}
+                onChange={(e) => setProduct({ ...product, description: e.target.value })}
+              />
 
               <IonLabel>Image URL:</IonLabel>
-              <IonInput value={image} onIonChange={e => setImage(e.detail.value!)} />
+              {/* <IonInput value={product.image} onIonChange={e => setImage(e.detail.value!)} /> */}
+              <input
+                type="text"
+                placeholder="Image URL"
+                value={product.image}
+                onChange={(e) => setProduct({ ...product, image: e.target.value })}
+              />
 
-              <IonImg src={image} className="product-image" />
+              <IonImg src={product.image} className="product-image" />
               <div className="buttons-container">
-    
-  </div>
+              </div>
             </IonCardContent>
-            
           </IonCard>
-          <IonButton expand="full" color="primary" onClick={handleSave} className="save-button">
-            Save
-          </IonButton>
-          <IonButton expand="full" color="danger" onClick={handleDelete} className="delete-button">
-            Delete
-          </IonButton> 
-      
+
+          <IonButton expand="full" color="primary" onClick={handleSave} className="save-button">Save</IonButton>
+          <IonButton expand="full" color="danger" onClick={handleDelete} className="delete-button">Delete</IonButton> 
         </main>
 
         <footer>

@@ -1,21 +1,51 @@
 import React from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonButtons  } from '@ionic/react';
-import { useHistory } from 'react-router-dom'; // Import useHistory
+import { useHistory, Link } from 'react-router-dom'; // Import useHistory
 import ExploreContainer from '../components/ExploreContainer';
 import logoImage from '../images/img1.jpeg'; // Import your logo image
-import { Link } from 'react-router-dom';
-import './Login.css';
+import './styles/Login.css';
+
+import { useState } from 'react';
+
+// The replaceable components
 
 const Login: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const history = useHistory(); // Initialize useHistory
+  const handleLogin = () => {
+    // Create a JSON object with the user's credentials
+    const credentials = {
+      email,
+      password,
+    };
 
-  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); // Prevent form submission
-    // Perform your login logic here
-    
-    // If login is successful, navigate to /home
-    history.push('/home');
+    // Send a POST request to your Flask authentication route
+    fetch('http://127.0.0.1:5000/api/v1/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(credentials),
+    })
+    .then((response) => {
+      if (response.ok || response.status==201) {
+        // Authentication succeeded
+        // Redirect the user to the protected part of your app
+        window.location.href = '/home'; // Example redirection
+      } else {
+        // Authentication failed
+        // Handle error or show an error message to the user
+        console.error('Incorrect email or password!');
+      }
+    })
+    .then((data:any) => {
+      console.log(data);
+    })
+    .catch((error) => {
+      console.error('Error during login:', error);
+      // Handle network errors or other issues
+    });
   };
 
   return (
@@ -81,18 +111,27 @@ const Login: React.FC = () => {
               <form>
                 <div className="form-group">
                   <label htmlFor="email">Email</label>
-                  <input type="email" id="email" />
+                  <input
+                    type="email" id="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
                 </div>
                 <div className="form-group">
                   <label htmlFor="password">Password</label>
-                  <input type="password" id="password" />
+                  <input
+                    type="password" id="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
                 </div>
                 <button type="button" onClick={handleLogin}>Login</button>
               </form>
             </div>
           </div>
         </main>
-
         {/* Footer */}
         <footer>
           <p>The Turing Team &copy;</p>

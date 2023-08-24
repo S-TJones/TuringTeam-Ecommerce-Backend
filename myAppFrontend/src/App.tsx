@@ -11,6 +11,7 @@ import ProductDetails from './components/ProductDetails';
 import Login from './pages/Login';
 import AddProduct from './pages/AddProduct';
 import SignUp from './pages/SignUp';
+import Status from './pages/Status';
 import UserList from './pages/UserList';
 import Cart from './pages/Cart';
 import Products from './pages/Products';
@@ -58,15 +59,29 @@ const App: React.FC = () => (
           <Redirect to="/home" />
         </Route>
 
+        {/* Routing for the Status */}
+        <Route exact path="/status">
+          <Status />
+        </Route>
+        {/* Routing for the Signup */}
+        <Route exact path="/signup">
+          <SignUp />
+        </Route>
+        {/* Routing for the Login */}
+        <Route exact path="/login">
+          <Login />
+        </Route>
         {/* Routing for the Product List */}
         <Route exact path="/products">
-          <ProductList />
+          <Products />
         </Route>
 
+        {/* Routing for the Orders List */}
         <Route exact path="/orders">
           <OrderList />
         </Route>
 
+        {/* Routing for the Order */}
         <Route exact path="/orders/:id">
           <OrderDetails />
         </Route>
@@ -77,17 +92,7 @@ const App: React.FC = () => (
         
         {/* Routing for Product Details */}
         <Route path="/products/:id">
-          <ProductDetails />
-        </Route>
-
-        {/* Routing for the Login Page */}
-        <Route exact path="/Login">
-          <Login />
-        </Route>
-
-        {/* Routing for the Login Page */}
-        <Route exact path="/SignUp">
-          <SignUp />
+          <ProductDetail />
         </Route>
 
         {/* Routing for the Add product page */}
@@ -104,17 +109,6 @@ const App: React.FC = () => (
         <Route exact path="/cart">
           <Cart/>
         </Route>
-
-      {/* Routing for products page */}
-      <Route exact path="/products">
-          <Products/>
-        </Route>
-
-      {/* Routing for product details page */}
-      <Route exact path="/Products/:productId">
-          <ProductDetail/>
-        </Route>
-
         
         {/* Routing for product details page for admin */}
       <Route exact path="/productlist">

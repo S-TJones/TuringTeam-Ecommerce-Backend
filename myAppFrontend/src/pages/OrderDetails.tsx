@@ -1,7 +1,7 @@
 import React from 'react';
 import { IonContent, IonHeader, IonPage, IonToolbar, IonButtons, IonButton } from '@ionic/react';
 import { Link, useParams } from 'react-router-dom';
-import './OrderDetails.css';
+import './styles/OrderDetails.css';
 
 
   

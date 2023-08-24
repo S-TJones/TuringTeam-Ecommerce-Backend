@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonButtons } from '@ionic/react';
 import { Link } from 'react-router-dom';
-import './AddProduct.css';
+import './styles/AddProduct.css';
 
 const AddProduct: React.FC = () => {
   const [productName, setProductName] = useState<string>('');

@@ -1,10 +1,7 @@
-// src/services/productService.js
-
-const BASE_URL = 'https://api.example.com'; // Replace with getProduct-byID API endpoint
 
 export const fetchProductDetails = async (productId: string) => {
   try {
-    const response = await fetch(`${BASE_URL}/products/${productId}`);
+    const response = await fetch(`http://127.0.0.1:5000/api/v1/products/${productId}`);
     
     if (!response.ok) {
       throw new Error('Failed to fetch product details');

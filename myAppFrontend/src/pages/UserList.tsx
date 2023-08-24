@@ -2,7 +2,7 @@ import {  IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton,IonBut
 import { Link } from 'react-router-dom';
 import ExploreContainer from '../components/ExploreContainer';
 import logoImage from '../images/img1.jpeg'; // Import your logo image
-import './UserList.css';
+import './styles/UserList.css';
 import users from '../components/UsersData';
 
 
