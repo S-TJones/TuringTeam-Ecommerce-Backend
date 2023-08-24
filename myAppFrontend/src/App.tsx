@@ -5,10 +5,11 @@ import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import HomePage from './components/HomePage';
 import ProductList from './components/ProductList';
-import ProductDetails from './components/ProductDetails';
 import Status from './pages/Status';
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';
+import Products from './pages/Products';
+import ProductDetail from './pages/ProductDetail';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -57,12 +58,12 @@ const App: React.FC = () => (
         </Route>
         {/* Routing for the Product List */}
         <Route exact path="/products">
-          <ProductList />
+          <Products />
         </Route>
         
         {/* Routing for Product Details */}
         <Route path="/products/:id">
-          <ProductDetails />
+          <ProductDetail />
         </Route>
       </IonRouterOutlet>
 
