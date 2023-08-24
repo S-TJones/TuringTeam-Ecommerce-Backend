@@ -78,7 +78,7 @@ const Cart: React.FC = () => {
               </div>
             </div>
           ))}
-          <IonButton className="chekout-button" fill="clear">Checkout</IonButton>
+          <IonButton className="chekout-button" fill="clear" href= "/checkout">Checkout</IonButton>
         </main>
         {/* Footer */}
         <footer>

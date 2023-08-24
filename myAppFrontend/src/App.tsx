@@ -19,6 +19,8 @@ import ProductList from './pages/ProductList';
 import UpdateUser from './pages/UpdateUser';
 import UpdateProduct from './pages/UpdateProduct';
 import OrderList from './pages/OrderList';
+import OrderDetails from './pages/OrderDetails';
+import Checkout from './pages/Checkout';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -38,6 +40,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+
 
 setupIonicReact();
 
@@ -62,6 +65,14 @@ const App: React.FC = () => (
 
         <Route exact path="/orders">
           <OrderList />
+        </Route>
+
+        <Route exact path="/orders/:id">
+          <OrderDetails />
+        </Route>
+
+        <Route exact path="/checkout">
+          <Checkout />
         </Route>
         
         {/* Routing for Product Details */}

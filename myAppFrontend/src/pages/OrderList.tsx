@@ -1,10 +1,9 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonSearchbar } from '@ionic/react';
+import React from 'react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton } from '@ionic/react';
 import { Link } from 'react-router-dom';
 import ExploreContainer from '../components/ExploreContainer';
-import logoImage from '../images/img1.jpeg'; // Import your logo image
+import logoImage from '../images/img1.jpeg';
 import './OrderList.css';
-
-// The replaceable components
 
 const orders = [
   {
@@ -44,18 +43,12 @@ const getStatusColor = (status) => {
 const OrderList: React.FC = () => {
   return (
     <IonPage>
-      {/* Header */}
       <IonHeader>
         <IonToolbar>
-          {/* Add image to the far left */}
           <div slot="start">
             <img src={logoImage} alt="Logo" style={{ height: '30px', width: 'auto' }} />
           </div>
-          
-          {/* Title in the center */}
           <IonTitle className="ion-text-left ion-text-bold title-left">Turing's Shop</IonTitle>
-          {/* Title in the center */}
-          
           <IonButtons slot="end">
             <Link to="/" className='tabs'>
               <IonButton>
@@ -85,38 +78,33 @@ const OrderList: React.FC = () => {
           </IonButtons>
         </IonToolbar>
       </IonHeader>
-      
-
-      {/* Content Area */}
       <IonContent fullscreen>
-        {/* Main Content */}
         <main>
           <div>
             <h2>Order List</h2>
             <ul>
               {orders.map((order) => (
                 <li key={order.id}>
-                  <div
-                    className="status"
-                    style={{ backgroundColor: getStatusColor(order.status) }}
-                  ></div>
-                  <div className="order-details">
-                    <p>Order ID: {order.id}</p>
-                    <p>Status: {order.status}</p>
-                    <p>Item: {order.items}</p>
-                    <p>Amount: {order.amount}</p>
-                  </div>
+                  <Link to={`/orders/${order.id}`} className="order-link">
+                    <div
+                      className="status"
+                      style={{ backgroundColor: getStatusColor(order.status) }}
+                    ></div>
+                    <div className="order-details">
+                      <p>Order ID: {order.id}</p>
+                      <p>Status: {order.status}</p>
+                      <p>Item: {order.items}</p>
+                      <p>Amount: {order.amount}</p>
+                    </div>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
         </main>
-
-        {/* Footer */}
         <footer>
           <p>The Turing Team &copy;</p>
         </footer>
-        
       </IonContent>
     </IonPage>
   );

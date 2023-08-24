@@ -39,19 +39,27 @@ body {
   ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-direction: column; /* Display orders in a column */
+    align-items: center; /* Center-align orders horizontally */
   }
   
   li {
     display: flex;
-    align-items: center;
+    flex-direction: column; /* Display order details in a column */
+    align-items: center; /* Center-align order details horizontally */
+    text-align: center;
+    border: 1px solid #ccc; /* Add a border to separate orders */
+    padding: 16px;
     margin-bottom: 16px;
+    width: 80%; /* Adjust the width as needed */
   }
   
   .status {
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    margin-right: 16px;
+    margin-bottom: 8px;
   }
   
   .order-details {
