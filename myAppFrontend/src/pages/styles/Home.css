@@ -2,23 +2,19 @@
 
 /* Make IonTitle white */
 ion-title {
-  color: black;
+  color: white;
 }
 
 
 /* Home.css or a separate CSS file */
 .tabs{
-  color: black; /* Change the text color of links to white */
-}
-
-.tabs a, .tabs button {
-  color: black;
+  color: white; /* Change the text color of links to white */
 }
 
 /* Home.css or a separate CSS file */
 .title-left {
-text-align: left; /* Set text alignment to left */
-margin-left: 16px; /* Add some left margin for spacing */
+  text-align: left; /* Set text alignment to left */
+  margin-left: 16px; /* Add some left margin for spacing */
 }
 
 
@@ -41,19 +37,19 @@ img {
 /* Style the "Start Shopping Now" button */
 ion-button.color-primary {
 /* position: absolute; */
-margin: 0 auto; /* Center the button horizontally */
-width: 60%; /* Adjust the width as needed */
-font-size: 14px; /* Adjust the font size as needed */
-padding: 12px 0; /* Adjust padding as needed */
-background-color: rgb(55, 55, 150); /* Background color for the button */
-color: white; /* Text color for the button */
-border-radius: 10px; /* Add some border radius for a rounded look */
+  margin: 0 auto; /* Center the button horizontally */
+  width: 60%; /* Adjust the width as needed */
+  font-size: 14px; /* Adjust the font size as needed */
+  padding: 12px 0; /* Adjust padding as needed */
+  background-color: rgb(55, 55, 150); /* Background color for the button */
+  color: white; /* Text color for the button */
+  border-radius: 10px; /* Add some border radius for a rounded look */
 }
 
 
 main > div {
-text-align: center;
-font-weight: bold;
+  text-align: center;
+  font-weight: bold;
 /* margin: 0 auto;
 max-width: 80%; Adjust the maximum width as needed */
 }

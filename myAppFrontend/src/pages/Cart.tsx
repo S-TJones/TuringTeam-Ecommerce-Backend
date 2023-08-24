@@ -9,12 +9,9 @@ import { useParams } from 'react-router-dom';
 
 
 const Cart: React.FC = () => {
-
   return (
     <IonPage>
-{/* Header */}
-{/* Header */}
-<IonHeader>
+      <IonHeader>
         <IonToolbar>
           {/* Add image to the far right */}
           <div slot="start">
@@ -24,38 +21,36 @@ const Cart: React.FC = () => {
           {/* Title in the center */}
           <IonTitle className="ion-text-left ion-text-bold title left">Turing's Shop</IonTitle>
           <IonButtons slot="end">
-          <Link to="/" className='tabs'>
-            <IonButton>
-              Home
-            </IonButton>
-          </Link>
-          <Link to="/products" className='tabs'>
-            <IonButton>
-              Products
-            </IonButton>
-          </Link>
-          <Link to="/orders" className='tabs'>
-            <IonButton>
-              Orders
-            </IonButton>
-          </Link>
-          <Link to="/cart" className='tabs'>
-            <IonButton>
-              Cart
-            </IonButton>
-          </Link>
-          <Link to="/login" className='tabs'>
-            <IonButton>
-              Login
-            </IonButton>
-          </Link>
-        </IonButtons>
-        
-          
+            <Link to="/" className='tabs'>
+              <IonButton>
+                Home
+              </IonButton>
+            </Link>
+            <Link to="/products" className='tabs'>
+              <IonButton>
+                Products
+              </IonButton>
+            </Link>
+            <Link to="/orders" className='tabs'>
+              <IonButton>
+                Orders
+              </IonButton>
+            </Link>
+            <Link to="/cart" className='tabs'>
+              <IonButton>
+                Cart
+              </IonButton>
+            </Link>
+            <Link to="/login" className='tabs'>
+              <IonButton>
+                Login
+              </IonButton>
+            </Link>
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
 
-    <IonContent fullscreen>
+      <IonContent fullscreen>
         <main>
           <h2 className="user-list-header">Cart</h2>
           {items.map((item) => (
@@ -65,7 +60,7 @@ const Cart: React.FC = () => {
               </div>
               <div className="product-details">
                 <h3>{item.name}</h3>
-                <div className="product-price">${item.price.toFixed(2)}</div>
+                <div className="product-price">${item.price}</div>
                 <div className="quantity">
                   <label>Quantity</label>
                   <select>
@@ -84,7 +79,6 @@ const Cart: React.FC = () => {
         <footer>
           <p>The Turing Team &copy;</p>
         </footer>
-      
       </IonContent>
     </IonPage>
   );
