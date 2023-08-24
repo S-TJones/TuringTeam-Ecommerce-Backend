@@ -106,7 +106,7 @@ const App: React.FC = () => (
         </Route>
 
       {/* Routing for products page */}
-      <Route exact path="/Products">
+      <Route exact path="/products">
           <Products/>
         </Route>
 

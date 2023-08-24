@@ -46,11 +46,14 @@
     text-align: center;
   }
   
+  
   .product-description {
     margin-top: 5px;
     font-size: 14px;
+    display: none;
   }
-  
+
+
   .product-price {
     margin-top: 10px;
     font-weight: bold;
@@ -63,4 +66,8 @@
     cursor: pointer;
   }
 
- 
+  @media only screen and (max-width:600px){
+ #mobile-hide{
+  display:none
+ }
+}

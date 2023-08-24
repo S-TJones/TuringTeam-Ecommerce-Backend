@@ -29,7 +29,7 @@ const Cart: React.FC = () => {
               Home
             </IonButton>
           </Link>
-          <Link to="/product" className='tabs'>
+          <Link to="/products" className='tabs'>
             <IonButton>
               Products
             </IonButton>
