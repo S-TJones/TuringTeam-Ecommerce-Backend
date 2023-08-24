@@ -1,4 +1,5 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonSearchbar } from '@ionic/react';
+import { Link } from 'react-router-dom';
 import ExploreContainer from '../components/ExploreContainer';
 
 // The replaceable components
@@ -8,8 +9,34 @@ const OrderDetails: React.FC = () => {
     <IonPage>
       {/* Header */}
       <IonHeader>
-        <IonToolbar>
-          <IonTitle>Blank</IonTitle>
+      <IonToolbar>
+      <IonButtons slot="end">
+            <Link to="/" className='tabs'>
+              <IonButton>
+                Home
+              </IonButton>
+            </Link>
+            <Link to="/products" className='tabs'>
+              <IonButton>
+                Products
+              </IonButton>
+            </Link>
+            <Link to="/orders" className='tabs'>
+              <IonButton>
+                Orders
+              </IonButton>
+            </Link>
+            <Link to="/cart" className='tabs'>
+              <IonButton>
+                Cart
+              </IonButton>
+            </Link>
+            <Link to="/login" className='tabs'>
+              <IonButton>
+                Login
+              </IonButton>
+            </Link>
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
 

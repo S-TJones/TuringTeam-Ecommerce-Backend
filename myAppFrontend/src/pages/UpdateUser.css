@@ -62,3 +62,22 @@
     background-color: #ccc;
   }
   
+
+  /* UpdateUser.css */
+
+/* Change the text color of the tabs to white */
+ion-button.tabs {
+  color: #fff !important;
+}
+
+/* Change the background color of the tabs to match your design */
+ion-button.tabs {
+  background-color: #ffffff; /* Change this to your desired background color */
+}
+
+/* Add hover and active styles for the tabs */
+ion-button.tabs:hover,
+ion-button.tabs:active {
+  background-color: #ffffff; /* Change this to your desired hover/active color */
+  color: #007bff !important; /* Change this to your desired text color */
+}

@@ -93,21 +93,22 @@ const UpdateProduct: React.FC = () => {
 
               <IonImg src={image} className="product-image" />
               <div className="buttons-container">
-    <IonButton expand="full" color="primary" onClick={handleSave} className="save-button">
-      Save
-    </IonButton>
-    <IonButton expand="full" color="danger" onClick={handleDelete} className="delete-button">
-      Delete
-    </IonButton>
+    
   </div>
             </IonCardContent>
             
           </IonCard>
+          <IonButton expand="full" color="primary" onClick={handleSave} className="save-button">
+            Save
+          </IonButton>
+          <IonButton expand="full" color="danger" onClick={handleDelete} className="delete-button">
+            Delete
+          </IonButton> 
       
         </main>
 
         <footer>
-          <p>TuringTeam &copy;</p>
+          <p>The Turing Team &copy;</p>
         </footer>
       </IonContent>
     </IonPage>

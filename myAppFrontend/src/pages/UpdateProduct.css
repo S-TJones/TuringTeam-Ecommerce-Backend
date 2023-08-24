@@ -1,13 +1,14 @@
 /* UpdateProduct.css */
 .update-product-header {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
   }
   
   .update-product-card {
-    margin: 20px auto;
+    margin: 10px auto;
     max-width: 500px;
     border-radius: 12px;
+    background-color: #fff;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
   }
@@ -16,7 +17,8 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-    padding: 20px;
+    color: black;
+    padding: 10px;
   }
   
   .update-product-card ion-label {
@@ -29,6 +31,7 @@
     border-radius: 8px;
     padding: 10px;
     font-size: 16px;
+    color: black;
   }
   
   .update-product-card .product-image {
@@ -75,3 +78,36 @@
     }
   }
   
+
+ /* UpdateProduct.css */
+
+/* UpdateProduct.css */
+
+/* ... (Previous styles) ... */
+
+/* UpdateProduct.css */
+
+/* ... (Previous styles) ... */
+
+/* Update the styles for the Save and Delete buttons */
+.save-button,
+.delete-button {
+  width: 50%; /* Set the width to 100% to span the container */
+  font-size: 14px; /* Adjust the font size */
+  border-radius: 8px;
+  padding: 8px; /* Adjust the padding */
+  margin: 8px; /* Add some margin to separate them */
+  display: block; /* Make them block-level elements */
+  text-align: center; /* Center the text horizontally */
+}
+
+/* Center the buttons vertically and horizontally */
+.buttons-container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Set the height to fill the viewport */
+}
+
+/* ... (Other styles) ... */

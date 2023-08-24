@@ -64,7 +64,7 @@ const UserList: React.FC = () => {
         </main>
         {/* Footer */}
         <footer>
-          <p>TuringTeam &copy</p>
+          <p>The Turing Team &copy;</p>
         </footer>
       </IonContent>
     </IonPage>

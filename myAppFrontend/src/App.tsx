@@ -5,8 +5,8 @@ import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import HomePage from './components/HomePage';
 //import ProductList from './components/ProductList';
-import ProductDetails from './components/ProductDetails';
 
+import ProductDetails from './components/ProductDetails';
 /* Importing Page Routing*/
 import Login from './pages/Login';
 import AddProduct from './pages/AddProduct';
@@ -18,6 +18,7 @@ import ProductDetail from './pages/ProductDetail';
 import ProductList from './pages/ProductList';
 import UpdateUser from './pages/UpdateUser';
 import UpdateProduct from './pages/UpdateProduct';
+import OrderList from './pages/OrderList';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -41,7 +42,9 @@ import './theme/variables.css';
 setupIonicReact();
 
 const App: React.FC = () => (
+  
   <IonApp>
+    <meta name= "viewport" content = "width=device-width, initial-scale=1.0"/>
     <IonReactRouter>
 
       <IonRouterOutlet id='main'>
@@ -55,6 +58,10 @@ const App: React.FC = () => (
         {/* Routing for the Product List */}
         <Route exact path="/products">
           <ProductList />
+        </Route>
+
+        <Route exact path="/orders">
+          <OrderList />
         </Route>
         
         {/* Routing for Product Details */}
@@ -73,7 +80,7 @@ const App: React.FC = () => (
         </Route>
 
         {/* Routing for the Add product page */}
-        <Route exact path="/AddProduct">
+        <Route exact path="/addproduct">
           <AddProduct/>
         </Route>
 
@@ -116,6 +123,7 @@ const App: React.FC = () => (
       </IonRouterOutlet>
 
     </IonReactRouter>
+    
   </IonApp>
 );
 

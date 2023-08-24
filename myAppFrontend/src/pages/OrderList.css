@@ -1,0 +1,80 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header Styles */
+  ion-toolbar {
+    background-color: #007bff; /* Header background color */
+    color: #fff; /* Header text color */
+  }
+  
+  /* Page Title Styles */
+  ion-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Navigation Buttons Styles */
+  .tabs ion-button {
+    color: #fff; /* Navigation button text color */
+  }
+  
+  /* Main Content Styles */
+  main {
+    padding: 20px;
+  }
+  
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  /* Order List Styles */
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .status {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 16px;
+  }
+  
+  .order-details {
+    flex: 1;
+  }
+  
+  /* Status Colors */
+  .status.completed {
+    background-color: #28a745; /* Green for completed */
+  }
+  
+  .status.pending {
+    background-color: #ffc107; /* Yellow for pending */
+  }
+  
+  .status.cancelled {
+    background-color: #dc3545; /* Red for cancelled */
+  }
+  
+  /* Footer Styles */
+  footer {
+    text-align: center;
+    padding-top: 20px;
+    color: #555;
+  }
+  

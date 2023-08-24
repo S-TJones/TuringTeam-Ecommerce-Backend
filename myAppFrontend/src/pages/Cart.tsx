@@ -12,7 +12,7 @@ const Cart: React.FC = () => {
 
   return (
     <IonPage>
-      {/* Header */}
+{/* Header */}
 {/* Header */}
 <IonHeader>
         <IonToolbar>
@@ -22,19 +22,29 @@ const Cart: React.FC = () => {
           </div>
           
           {/* Title in the center */}
-          <IonTitle className="ion-text-center ion-text-bold">Turing's Shop</IonTitle>
+          <IonTitle className="ion-text-left ion-text-bold title left">Turing's Shop</IonTitle>
           <IonButtons slot="end">
-          <Link to="/">
+          <Link to="/" className='tabs'>
             <IonButton>
               Home
             </IonButton>
           </Link>
-          <Link to="/productlist">
+          <Link to="/product" className='tabs'>
             <IonButton>
               Products
             </IonButton>
           </Link>
-          <Link to="/login">
+          <Link to="/orders" className='tabs'>
+            <IonButton>
+              Orders
+            </IonButton>
+          </Link>
+          <Link to="/cart" className='tabs'>
+            <IonButton>
+              Cart
+            </IonButton>
+          </Link>
+          <Link to="/login" className='tabs'>
             <IonButton>
               Login
             </IonButton>
@@ -43,7 +53,7 @@ const Cart: React.FC = () => {
         
           
         </IonToolbar>
-    </IonHeader>
+      </IonHeader>
 
     <IonContent fullscreen>
         <main>
@@ -72,7 +82,7 @@ const Cart: React.FC = () => {
         </main>
         {/* Footer */}
         <footer>
-          <p>TuringTeam &copy</p>
+          <p>The Turing Team &copy;</p>
         </footer>
       
       </IonContent>

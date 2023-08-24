@@ -29,8 +29,34 @@ const Login: React.FC = () => {
           </div>
           
           {/* Title in the center */}
-          <IonTitle className="ion-text-center ion-text-bold">Turing's Shop</IonTitle>
-         
+          <IonTitle className="ion-text-left ion-text-bold title left">Turing's Shop</IonTitle>
+          <IonButtons slot="end">
+          <Link to="/" className='tabs'>
+            <IonButton>
+              Home
+            </IonButton>
+          </Link>
+          <Link to="/product" className='tabs'>
+            <IonButton>
+              Products
+            </IonButton>
+          </Link>
+          <Link to="/orders" className='tabs'>
+            <IonButton>
+              Orders
+            </IonButton>
+          </Link>
+          <Link to="/cart" className='tabs'>
+            <IonButton>
+              Cart
+            </IonButton>
+          </Link>
+          <Link to="/login" className='tabs'>
+            <IonButton>
+              Login
+            </IonButton>
+          </Link>
+        </IonButtons>
         
           
         </IonToolbar>

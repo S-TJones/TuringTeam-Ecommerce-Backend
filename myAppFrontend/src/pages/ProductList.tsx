@@ -20,15 +20,15 @@ const ProductList: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <div slot="start">
-            <img src={logoImage} alt="Logo" style={{ height: '30px', width: 'auto' }} />
+            <img src={logoImage} alt="Logo" className="logo-image" />
           </div>
           <IonTitle className="ion-text-center ion-text-bold">Turing's Shop</IonTitle>
           <IonButtons slot="end">
             <Link to="/">
               <IonButton>Home</IonButton>
             </Link>
-            <Link to="/userlist">
-              <IonButton>Users</IonButton>
+            <Link to="/productlist">
+              <IonButton>Products</IonButton>
             </Link>
             <Link to="/login">
               <IonButton>Login</IonButton>
@@ -40,7 +40,7 @@ const ProductList: React.FC = () => {
       <IonContent fullscreen>
         <main className="product-list-container">
           <h2 className="product-list-heading">Product List</h2>
-          <Link to="/add-product">
+          <Link to="/addproduct">
             <IonButton className="add-product-button">Add Product</IonButton>
           </Link>
           <div className="product-cards">
@@ -60,7 +60,7 @@ const ProductList: React.FC = () => {
           </div>
         </main>
         <footer>
-          <p>TuringTeam &copy;</p>
+          <p>The Turing Team &copy;</p>
         </footer>
       </IonContent>
     </IonPage>

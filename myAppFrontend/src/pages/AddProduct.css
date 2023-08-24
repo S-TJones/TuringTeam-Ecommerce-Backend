@@ -1,0 +1,61 @@
+/* AddProduct.css */
+
+/* Center the content vertically and horizontally */
+/* main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  } */
+  
+  /* Container for the form */
+  /* div {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    /* align-items: center; Center children horizontally */
+  
+  
+  /* Style the input elements */
+  input[type="text"], textarea {
+    width: 100%; /* Set the width to 50% for half width */
+    margin: 10px 0; /* Add margin to separate them vertically */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+  /* Style the photo upload section */
+  .photo-template {
+    width: 100%;
+    max-width: 300px; /* Limit the width of the photo section */
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px dashed #ccc;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  /* Style the buttons */
+  .add-button, .cancel-button {
+    width: 10%;
+    max-width: 300px; /* Limit the width of the buttons */
+    margin: 10px ;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .add-button {
+    background-color: #007bff; /* Style for the "Add" button */
+  }
+  
+  .cancel-button {
+    background-color: #dc3545; /* Style for the "Cancel" button */
+  }
+  

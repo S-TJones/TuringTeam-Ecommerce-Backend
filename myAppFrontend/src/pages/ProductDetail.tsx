@@ -34,19 +34,38 @@ const ProductDetail: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
+          {/* Add image to the far left */}
           <div slot="start">
-            <img src={logoImage} alt="Logo" className="logo-image" />
+            <img src={logoImage} alt="Logo" style={{ height: '30px', width: 'auto' }} />
           </div>
-          <IonTitle className="ion-text-center ion-text-bold">Turing's Shop</IonTitle>
+          
+          {/* Title in the center */}
+          <IonTitle className="ion-text-left ion-text-bold title-left">Turing's Shop</IonTitle>
           <IonButtons slot="end">
-            <Link to="/">
-              <IonButton>Home</IonButton>
+            <Link to="/" className='tabs'>
+              <IonButton>
+                Home
+              </IonButton>
             </Link>
-            <Link to="/products">
-              <IonButton>Products</IonButton>
+            <Link to="/products" className='tabs'>
+              <IonButton>
+                Products
+              </IonButton>
             </Link>
-            <Link to="/login">
-              <IonButton>Login</IonButton>
+            <Link to="/orders" className='tabs'>
+              <IonButton>
+                Orders
+              </IonButton>
+            </Link>
+            <Link to="/cart" className='tabs'>
+              <IonButton>
+                Cart
+              </IonButton>
+            </Link>
+            <Link to="/login" className='tabs'>
+              <IonButton>
+                Login
+              </IonButton>
             </Link>
           </IonButtons>
         </IonToolbar>
@@ -72,9 +91,11 @@ const ProductDetail: React.FC = () => {
                       <IonSelectOption value="3">3</IonSelectOption>
                     </IonSelect>
                   </div>
-                  <IonButton expand="full" color="primary" className="add-to-cart-button">
-                    Add to Cart
-                  </IonButton>
+                  <Link to="/cart" className="add-to-cart-link">
+                    <IonButton expand="full" color="primary" className="add-to-cart-button">
+                      Add to Cart
+                    </IonButton>
+                  </Link>
                 </div>
               </IonCardContent>
             </IonCard>
@@ -82,7 +103,7 @@ const ProductDetail: React.FC = () => {
         </main>
 
         <footer>
-          <p>TuringTeam &copy;</p>
+          <p>The Turing Team &copy;</p>
         </footer>
       </IonContent>
     </IonPage>
