@@ -56,7 +56,7 @@ const SignUp: React.FC = () => {
         if (response.ok || response.status==201) {
           // Signup succeeded
           // Redirect the user to the login page or a success page
-          // window.location.href = '/login'; // Example redirection
+          window.location.href = '/login'; // Example redirection
           console.log('Signup success');
 
         } else {

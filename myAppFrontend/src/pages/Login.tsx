@@ -17,7 +17,7 @@ const Login: React.FC = () => {
     };
 
     // Send a POST request to your Flask authentication route
-    fetch('/login', {
+    fetch('http://127.0.0.1:5000/api/v1/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -25,14 +25,18 @@ const Login: React.FC = () => {
       body: JSON.stringify(credentials),
     })
     .then((response) => {
-      if (response.ok) {
+      if (response.ok || response.status==201) {
         // Authentication succeeded
         // Redirect the user to the protected part of your app
-        window.location.href = '/dashboard'; // Example redirection
+        window.location.href = '/home'; // Example redirection
       } else {
         // Authentication failed
         // Handle error or show an error message to the user
+        console.error('Incorrect email or password!');
       }
+    })
+    .then((data:any) => {
+      console.log(data);
     })
     .catch((error) => {
       console.error('Error during login:', error);
