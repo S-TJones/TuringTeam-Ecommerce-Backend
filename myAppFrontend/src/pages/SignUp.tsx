@@ -57,8 +57,8 @@ const SignUp: React.FC = () => {
         <main className="ion-padding">
           <div className="login-container">
             {/* Image */}
-            <div className="image-container">
-              <img src="src/images/img1.jpeg" alt="Big Image" />
+            <div className="image-container" >
+              <img src="src/images/img1.jpeg" alt="Big Image" className='mobile-hide'/>
             </div>
 
             {/* Login Form */}

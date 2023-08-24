@@ -49,7 +49,7 @@ const ProductList: React.FC = () => {
                 <img src={product.image} alt={product.title} className="product-image" />
                 <div className="product-details">
                   <h3>{product.title}</h3>
-                  <p className="product-description">{product.description.substring(0, 50)}...</p>
+                  <p id='mobile-hide' className="product-description">{product.description.substring(0, 50)}...</p>
                   <p className="product-price">${product.price.toFixed(2)}</p>
                 </div>
                 <Link to={`/edit-product/${product.id}`} className="edit-button">

@@ -64,7 +64,7 @@ const Products: React.FC = () => {
       <div className="product-card">
         <img src={product.image} alt={product.title} />
         <h3>{product.title}</h3>
-        <p>{product.description}</p>
+        <p className='mobile-hide'>{product.description}</p>
         <p className="product-price">${product.price.toFixed(2)}</p>
       </div>
     </Link>

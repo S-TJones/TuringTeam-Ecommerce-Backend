@@ -58,7 +58,7 @@ const AddProduct: React.FC = () => {
                 Home
               </IonButton>
             </Link>
-            <Link to="/product" className='tabs'>
+            <Link to="/productlist" className='tabs'>
               <IonButton>
                 Products
               </IonButton>

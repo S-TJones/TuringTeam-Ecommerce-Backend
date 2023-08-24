@@ -23,7 +23,7 @@ margin-left: 16px; /* Add some left margin for spacing */
 /* Place the home image across the screen */
 
 @media only screen and (max-width:600px){
-  img {
+  .mobile-hide {
     display: none;
     }
 }

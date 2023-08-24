@@ -1,5 +1,6 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonSearchbar } from '@ionic/react';
+//import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonSearchbar } from '@ionic/react';
+import { IonButtons, IonContent, IonHeader, IonMenu, IonMenuButton, IonPage, IonTitle, IonToolbar, IonSearchbar, IonButton} from '@ionic/react';
 import { Link } from 'react-router-dom';
 import logoImage from '../images/img1.jpeg'; // Import your logo image
 import homeImage from '../images/img2.jpg'; // Import your home image
@@ -10,8 +11,12 @@ import ProductDetails from '../components/ProductDetails';
 
 const Home: React.FC = () => {
   return (
+    
+
     <IonPage>
-      {/* Header */}
+
+
+
       <IonHeader>
         <IonToolbar>
           {/* Add image to the far left */}
@@ -22,6 +27,7 @@ const Home: React.FC = () => {
           {/* Title in the center */}
           <IonTitle className="ion-text-left ion-text-bold title-left">Turing's Shop</IonTitle>
           <IonButtons slot="end">
+           
             <Link to="/" className='tabs'>
               <IonButton>
                 Home
@@ -65,7 +71,7 @@ const Home: React.FC = () => {
             <p>Stop at Turing's Shop today! We have everything you may need!</p>
             
             {/* Image */}
-            <img src={homeImage} alt="home" style={{ maxWidth: '100%' }} />
+            <img src={homeImage} className='mobile-hide' alt="home" style={{ maxWidth: '100%' }} />
             
             {/* "Start Shopping Now" button */}
             <IonButton color="primary" expand="full" href= "/products">
@@ -84,6 +90,7 @@ const Home: React.FC = () => {
         </footer>
       </IonContent>
     </IonPage>
+ 
   );
 };
 

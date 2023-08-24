@@ -69,7 +69,7 @@ const Login: React.FC = () => {
           <div className="login-container">
             {/* Image */}
             <div className="image-container">
-              <img src="src/images/img1.jpeg" alt="Big Image" />
+              <img src="src/images/img1.jpeg" alt="Big Image"/>
             </div>
 
             {/* Login Form */}
